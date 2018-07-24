@@ -17,7 +17,7 @@ struct my_kernail_list {
 ```
 The list is inside the user-defined data item. A member of type `struct list_head` can be anywhere in the user-defined structure. The `struct list_head` variable can have any name.
 
-_**llist** is not meant to be embedded into any project and is for pracice's sake only._
+_**llist** is not meant to be embedded into any project and is for practice's sake only._
 
 #### Build from source on Mac:
 
