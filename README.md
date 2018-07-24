@@ -7,7 +7,7 @@
 
 The library is a set of operations on type oblivious, easy-to-use, circularly-linked list.
 
-Usage:
+#### Usage:
 ``` c
 struct my_kernail_list {
          int data;
@@ -19,7 +19,7 @@ The list is inside the user-defined data item. A member of type `struct list_hea
 
 _**llist** is not meant to be embedded into any project and is for pracice's sake only._
 
-##### Build from source on Mac:
+#### Build from source on Mac:
 
 ``` console
 gcc -shared -fpic llist.c -o libllist.dylib
@@ -32,7 +32,7 @@ gcc -o test test.c libllist.dylib
 ./test
 ```
 
-##### Build from source on Ubuntu:
+#### Build from source on Ubuntu:
 
 Compile the library sources into position-independent code:
 ``` console
