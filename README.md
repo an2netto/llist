@@ -7,6 +7,8 @@
 
 The library is a set of operations on type oblivious, easy-to-use, circularly-linked list.
 
+_**llist** is not meant to be embedded into any project and is for practice's sake only._
+
 #### Usage:
 ``` c
 struct my_kernail_list {
@@ -17,8 +19,27 @@ struct my_kernail_list {
 ```
 The list is inside the user-defined data item. A member of type `struct list_head` can be anywhere in the user-defined structure. The `struct list_head` variable can have any name.
 
-_**llist** is not meant to be embedded into any project and is for practice's sake only._
+#### Sorting algorithm
 
+Merge sort of a linked list was heavily inspired by Dathan Bennet's [*MergeSort in Haskell*](https://medium.com/@dathanbennett/mergesort-in-haskell-df3c446f3ae3). It is so visually comprehensive that I will have to embed it here:
+
+``` haskell
+mergeSort :: (Ord a) => [a] -> [a]
+mergeSort [] = []
+mergeSort [a] = [a]
+mergeSort a =·
+  merge (mergeSort firstFew) (mergeSort lastFew)
+    where firstFew = take ((length a) `div` 2) a
+          lastFew = drop ((length a) `div` 2) a
+
+-- Expects a and b to already be sorted
+merge :: (Ord a) => [a] -> [a] -> [a]
+merge a [] = a
+merge [] b = b
+merge (a:as) (b:bs)
+  | a < b     = a:(merge as (b:bs))
+  | otherwise = b:(merge (a:as) bs)
+```
 #### Build from source on Mac:
 
 ``` console
